@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<!-- Global styles -->
+<!-- Global styles -- skip to end for content-->
 <svelte:head>
   <style lang="scss">
     /*
