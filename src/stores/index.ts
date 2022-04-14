@@ -1,3 +1,3 @@
 export { unit } from "./unit";
 export { location } from "./location";
-export { bgUrl } from "./bgUrl";
+export { bgUrl } from "./backgroundUrl";
