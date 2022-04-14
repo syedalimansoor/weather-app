@@ -1,26 +1,70 @@
 <script lang="ts">
 </script>
 
-<div>
-  <h1>New app</h1>
-</div>
-
 <!-- Global styles -->
 <svelte:head>
   <style lang="scss">
-    body {
-      background-color: red;
+    /*
+      Josh's Custom CSS Reset
+      https://www.joshwcomeau.com/css/custom-css-reset/
+    */
 
-      h1 {
-        color: white;
-      }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    * {
+      margin: 0;
+    }
+    html,
+    body {
+      height: 100%;
+    }
+    body {
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+    }
+    #root,
+    #__next {
+      isolation: isolate;
+    }
+
+    // Global styles
+
+    :root {
+      font-family: $font;
+      font-size: $fs-default;
+      font-weight: $fw-reg;
     }
   </style>
 </svelte:head>
 
+<div />
+
 <!-- App styles -->
 <style lang="scss">
-  div {
-    font-family: monospace;
-  }
 </style>

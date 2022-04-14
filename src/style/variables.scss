@@ -1,1 +1,20 @@
 $font: "DM Sans", sans-serif;
+
+$fw-reg: 400;
+$fw-bld: 700;
+
+$fs-xsmall: 16px;
+$fs-small: 18px;
+$fs-medium: 24px;
+$fs-large: 36px;
+$fs-xlarge: 96px;
+$fs-xxlarge: 144px;
+
+$fs-default: $fs-xsmall;
+
+$white: hsl(0 0% 87%);
+$black: hsl(0 0% 13%);
+$grey: hsl(0 0% 20%);
+$transparent-gray: hsl(0 0% 43% / 0.29);
+
+$breakpoint-tablet: 850px;
