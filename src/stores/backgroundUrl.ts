@@ -6,6 +6,10 @@ const UNSPLASH_API_URL = "https://api.unsplash.com/";
 export const bgUrl = (() => {
   const { subscribe, set } = writable<string>(null);
 
+  /**
+   * Fetch an image from Unsplash and set the backgroundUrl store to the image link
+   * @param query (optional) a search query to filter photos
+   */
   const setBackground = async (query: string) => {
     const res = await axios.get(UNSPLASH_API_URL + "photos/random", {
       params: {

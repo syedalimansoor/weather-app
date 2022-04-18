@@ -3,6 +3,9 @@ import { writable } from "svelte/store";
 export const unit = (() => {
   const { subscribe, update } = writable<"C" | "F">("C");
 
+  /**
+   * Toggle the temperature unit store value between "C" and "F"
+   */
   const toggle = () => {
     update((value) => {
       switch (value) {
