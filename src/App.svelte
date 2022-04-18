@@ -1,4 +1,8 @@
 <script lang="ts">
+  import Header from "./lib/Header/Header.svelte";
+  import SearchBar from "./lib/SearchBar/SearchBar.svelte";
+  import CurrentTemp from "./lib/CurrentTemp/CurrentTemp.svelte";
+  import ForecastTemp from "./lib/ForecastTemp/ForecastTemp.svelte";
 </script>
 
 <!-- Global styles -- skip to end for content-->
@@ -63,7 +67,12 @@
   </style>
 </svelte:head>
 
-<div />
+<div class="wrapper">
+  <Header />
+  <SearchBar />
+  <CurrentTemp />
+  <ForecastTemp />
+</div>
 
 <!-- App styles -->
 <style lang="scss">
