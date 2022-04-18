@@ -1,6 +1,6 @@
 <script lang="ts">
   import { backgroundUrl } from "./stores";
-  import { onMount } from "svelte";
+  // import { onMount } from "svelte";
 
   import Header from "./lib/Header/Header.svelte";
   import SearchBar from "./lib/SearchBar/SearchBar.svelte";
