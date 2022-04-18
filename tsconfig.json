@@ -15,7 +15,13 @@
     "allowJs": true,
     "checkJs": true,
     "isolatedModules": true,
-    "declaration": true
+    "declaration": true,
+    "paths": {
+      "$src/*": ["src/*"],
+      "$stores/*": ["src/stores/*"],
+      "$lib/*": ["src/lib/*"],
+      "$assets/*": ["src/assets/*"]
+    }
   },
   "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte"],
   "references": [{ "path": "./tsconfig.node.json" }]

@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { backgroundUrl } from "./stores";
+  import { backgroundUrl } from "$stores/index";
   // import { onMount } from "svelte";
 
-  import Header from "./lib/Header/Header.svelte";
-  import SearchBar from "./lib/SearchBar/SearchBar.svelte";
-  import CurrentTemp from "./lib/CurrentTemp/CurrentTemp.svelte";
-  import ForecastTemp from "./lib/ForecastTemp/ForecastTemp.svelte";
+  import Header from "$lib/Header/Header.svelte";
+  import SearchBar from "$lib/SearchBar/SearchBar.svelte";
+  import CurrentTemp from "$lib/CurrentTemp/CurrentTemp.svelte";
+  import ForecastTemp from "$lib/ForecastTemp/ForecastTemp.svelte";
 
   // onMount(() => backgroundUrl.setBackground("weather"));
 </script>
