@@ -11,7 +11,12 @@ interface Location {
 const GEOCODING_API_URL = "http://api.openweathermap.org/geo/1.0/reverse";
 
 export const location = (() => {
-  const { subscribe, set } = writable<Location>(null);
+  const { subscribe, set } = writable<Location>({
+    name: "",
+    lat: null,
+    lon: null,
+    country: "",
+  });
 
   /**
    * Get the user's current location and set the corresponding values to `location`
