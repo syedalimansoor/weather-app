@@ -3,14 +3,13 @@
   import UnitToggle from "./UnitToggle.svelte";
 </script>
 
-<header class="header">
+<div class="header">
   <Logo />
   <UnitToggle />
-</header>
+</div>
 
 <style lang="scss">
   .header {
-    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
   }

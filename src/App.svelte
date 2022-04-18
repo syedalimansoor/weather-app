@@ -74,8 +74,12 @@
 </svelte:head>
 
 <div class="wrapper" style={`--background-url: url(${$backgroundUrl})`}>
-  <Header />
-  <SearchBar />
+  <header class="header">
+    <Header />
+  </header>
+  <div class="search-bar" role="search">
+    <SearchBar />
+  </div>
   <section class="current">
     <CurrentTemp />
   </section>
@@ -93,12 +97,21 @@
     background-blend-mode: multiply;
     background-size: cover;
 
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
 
     > * {
       flex-grow: 0;
     }
+  }
+
+  .header {
+    margin-bottom: 1.5rem;
+  }
+
+  .search-bar {
+    margin-bottom: 1.5rem;
   }
 
   .current {
