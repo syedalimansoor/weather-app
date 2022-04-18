@@ -14,7 +14,11 @@ export const backgroundUrl = (() => {
     const res = await axios.get(UNSPLASH_API_URL + "photos/random", {
       params: {
         query: query ? query : null,
-        client_id: import.meta.env.VITE_UNSPLASH_ACCESS_KEY,
+      },
+      headers: {
+        "Authorization": `Client-ID ${
+          import.meta.env.VITE_UNSPLASH_ACCESS_KEY
+        }`,
       },
     });
 
