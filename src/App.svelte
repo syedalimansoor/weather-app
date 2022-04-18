@@ -1,8 +1,13 @@
 <script lang="ts">
+  import { backgroundUrl } from "./stores";
+  import { onMount } from "svelte";
+
   import Header from "./lib/Header/Header.svelte";
   import SearchBar from "./lib/SearchBar/SearchBar.svelte";
   import CurrentTemp from "./lib/CurrentTemp/CurrentTemp.svelte";
   import ForecastTemp from "./lib/ForecastTemp/ForecastTemp.svelte";
+
+  // onMount(() => backgroundUrl.setBackground("weather"));
 </script>
 
 <!-- Global styles -- skip to end for content-->
@@ -67,7 +72,7 @@
   </style>
 </svelte:head>
 
-<div class="wrapper">
+<div class="wrapper" style={`--background-url: url(${$backgroundUrl})`}>
   <Header />
   <SearchBar />
   <CurrentTemp />
@@ -76,4 +81,13 @@
 
 <!-- App styles -->
 <style lang="scss">
+  .wrapper {
+    width: 100%;
+    min-height: 100vh;
+    /* background-image: var(--background-url); */
+    background-image: url("./assets/default-bg.jpg");
+    background-color: $transparent-gray;
+    background-blend-mode: multiply;
+    background-size: cover;
+  }
 </style>
