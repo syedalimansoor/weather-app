@@ -23,9 +23,14 @@
     gap: 1em;
   }
 
+  $slider-size: 1.2em;
+  $toggle-height: 1.6em;
+  $toggle-width: 3.4em;
+  $inset: ($toggle-height - $slider-size) / 2;
+
   .toggle {
-    width: 3.4em;
-    height: 1.6em;
+    width: $toggle-width;
+    height: $toggle-height;
     position: relative;
 
     background-color: $transparent-gray;
@@ -35,13 +40,14 @@
 
   .slider {
     position: absolute;
-    width: 1.2em;
-    inset-block: 0.2em;
-    left: 0.2em;
+    width: $slider-size;
+    inset-block: $inset;
+    left: $inset;
 
     transition: 100ms ease;
     border-radius: 99em;
     background-color: $white;
+    box-shadow: 0px 2px 4px rgba(45, 45, 45, 0.5);
   }
 
   .checkbox {
@@ -51,7 +57,7 @@
     height: 0;
 
     &:checked ~ .slider {
-      left: 3.4em - 1.2em - 0.2em;
+      left: $toggle-width - $inset - $slider-size;
     }
   }
 </style>
