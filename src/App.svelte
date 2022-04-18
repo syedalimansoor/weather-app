@@ -89,7 +89,7 @@
     min-height: 100vh;
     /* background-image: var(--background-url); */
     background-image: url("./assets/default-bg.jpg");
-    background-color: $transparent-gray;
+    background-color: $gray;
     background-blend-mode: multiply;
     background-size: cover;
 
