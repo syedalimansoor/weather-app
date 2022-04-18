@@ -26,7 +26,7 @@
   $slider-size: 1.2em;
   $toggle-height: 1.6em;
   $toggle-width: 3.4em;
-  $inset: ($toggle-height - $slider-size) / 2;
+  $inset: calc(($toggle-height - $slider-size) / 2);
 
   .toggle {
     width: $toggle-width;
