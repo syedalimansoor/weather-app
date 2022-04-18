@@ -8,9 +8,9 @@ export const backgroundUrl = (() => {
 
   /**
    * Fetch an image from Unsplash and set the backgroundUrl store to the image link
-   * @param query (optional) a search query to filter photos
+   * @param query a search query to filter photos
    */
-  const setBackground = async (query: string) => {
+  const setBackground = async (query?: string) => {
     const res = await axios.get(UNSPLASH_API_URL + "photos/random", {
       params: {
         query: query ? query : null,
