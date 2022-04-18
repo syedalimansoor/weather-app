@@ -3,7 +3,7 @@ import { writable } from "svelte/store";
 
 const UNSPLASH_API_URL = "https://api.unsplash.com/";
 
-export const bgUrl = (() => {
+export const backgroundUrl = (() => {
   const { subscribe, set } = writable<string>(null);
 
   /**
@@ -13,7 +13,7 @@ export const bgUrl = (() => {
   const setBackground = async (query: string) => {
     const res = await axios.get(UNSPLASH_API_URL + "photos/random", {
       params: {
-        query,
+        query: query ? query : null,
         client_id: import.meta.env.VITE_UNSPLASH_ACCESS_KEY,
       },
     });
