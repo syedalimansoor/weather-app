@@ -68,6 +68,7 @@
       font-family: $font;
       font-size: $fs-default;
       font-weight: $fw-reg;
+      color: $white;
     }
   </style>
 </svelte:head>
@@ -75,7 +76,9 @@
 <div class="wrapper" style={`--background-url: url(${$backgroundUrl})`}>
   <Header />
   <SearchBar />
-  <CurrentTemp />
+  <section class="current">
+    <CurrentTemp />
+  </section>
   <ForecastTemp />
 </div>
 
@@ -89,5 +92,16 @@
     background-color: $transparent-gray;
     background-blend-mode: multiply;
     background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+
+    > * {
+      flex-grow: 0;
+    }
+  }
+
+  .current {
+    flex-grow: 1;
   }
 </style>
