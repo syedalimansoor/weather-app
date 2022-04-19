@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "country-code-emoji": "^2.3.0",
     "path": "^0.12.7"
   }
 }
