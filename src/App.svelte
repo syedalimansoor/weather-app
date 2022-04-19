@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { backgroundUrl, location } from "$stores/index";
+  import { backgroundUrl, location, unit } from "$stores/index";
   import { onMount } from "svelte";
 
   import Header from "$lib/Header/Header.svelte";
@@ -7,6 +7,7 @@
   import CurrentTemp from "$lib/CurrentTemp/CurrentTemp.svelte";
   import ForecastTemp from "$lib/ForecastTemp/ForecastTemp.svelte";
 
+  onMount(unit.autoset);
   onMount(location.autoset);
   // onMount(() => backgroundUrl.setBackground("weather"));
 </script>
