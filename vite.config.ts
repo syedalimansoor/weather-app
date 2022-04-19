@@ -13,4 +13,5 @@ export default defineConfig({
       "$assets": path.resolve("./src/assets"),
     },
   },
+  base: "/weather-app/",
 });
