@@ -20,7 +20,8 @@
       "$src/*": ["src/*"],
       "$stores/*": ["src/stores/*"],
       "$lib/*": ["src/lib/*"],
-      "$assets/*": ["src/assets/*"]
+      "$assets/*": ["src/assets/*"],
+      "$utils/*": ["src/utils/*"]
     }
   },
   "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte"],

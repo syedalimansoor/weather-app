@@ -11,6 +11,7 @@ export default defineConfig({
       "$stores": path.resolve("./src/stores"),
       "$lib": path.resolve("./src/lib"),
       "$assets": path.resolve("./src/assets"),
+      "$utils": path.resolve("./src/utils"),
     },
   },
   base: "/weather-app/",
