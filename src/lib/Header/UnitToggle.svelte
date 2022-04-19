@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { unit } from "$stores/index";
+  import { unit } from "$src/stores";
 </script>
 
 <div class="wrapper">

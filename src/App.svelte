@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { backgroundUrl, location, unit } from "$stores/index";
+  import { backgroundUrl, location, unit } from "$src/stores";
   import { onMount } from "svelte";
 
   import Header from "$lib/Header/Header.svelte";

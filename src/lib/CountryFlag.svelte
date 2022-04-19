@@ -4,7 +4,6 @@
   export let code: string;
 
   let flag: string = "";
-
   $: if (code) flag = getFlag(code);
 </script>
 

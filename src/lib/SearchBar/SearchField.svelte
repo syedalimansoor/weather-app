@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { location } from "$stores/index";
+  import { location } from "$src/stores";
 
   let editing: boolean = false;
   let value: string = "";

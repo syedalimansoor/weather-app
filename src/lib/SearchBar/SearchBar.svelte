@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { location } from "$stores/index";
+  import { location } from "$src/stores";
 
   import SearchField from "./SearchField.svelte";
   import CountryFlag from "$lib/CountryFlag.svelte";
@@ -9,7 +9,7 @@
 <div class="field">
   <SearchField />
   {#if $location.country}
-  <CountryFlag code={$location.country} />
+    <CountryFlag code={$location.country} />
   {/if}
 </div>
 
