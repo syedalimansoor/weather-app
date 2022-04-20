@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { location } from "$src/stores";
   import type { City } from "$src/stores/location";
   import CountryFlag from "$lib/CountryFlag.svelte";
 
@@ -6,7 +7,7 @@
 </script>
 
 <li class="item">
-  <button class="item-btn">
+  <button class="item-btn" on:click={() => location.set(city)}>
     <span class="flag">
       <CountryFlag code={city.country} />
     </span>
