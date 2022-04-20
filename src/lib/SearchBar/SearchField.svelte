@@ -2,6 +2,7 @@
   import { location } from "$src/stores";
   import { search } from "$src/utils";
   import type { City } from "$src/stores/location";
+  import { fly } from "svelte/transition";
 
   import DataList from "$src/lib/SearchBar/DataList.svelte";
 
@@ -50,7 +51,7 @@
     />
   </div>
   {#if editing}
-    <div class="datalist-wrapper">
+    <div class="datalist-wrapper" transition:fly={{ y: -10, duration: 500 }}>
       <DataList {cities} />
     </div>
   {/if}
