@@ -42,5 +42,10 @@ export const location = (() => {
     }
   };
 
-  return { subscribe, autoset };
+  const setLocation = (city: City) => {
+    const { name, lat, lon, country } = city
+    set({name, lat, lon, country})
+  }
+
+  return { subscribe, autoset, set: setLocation };
 })();
