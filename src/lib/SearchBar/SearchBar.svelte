@@ -9,7 +9,9 @@
 <div class="field">
   <SearchField />
   {#if $location.country}
-    <CountryFlag code={$location.country} />
+    <span class="flag">
+      <CountryFlag code={$location.country} />
+    </span>
   {/if}
 </div>
 
@@ -23,5 +25,9 @@
     display: flex;
     align-items: center;
     gap: 1em;
+  }
+
+  .flag {
+    font-size: 2rem;
   }
 </style>
