@@ -1,28 +1,19 @@
 import axios, { AxiosRequestConfig, CancelTokenSource } from "axios";
 
-const resources = {};
-
 const makeRequestCreator = () => {
-  let cancel: CancelTokenSource;
+  let token: CancelTokenSource;
 
-  return async (query: string, options?: AxiosRequestConfig) => {
-    if (cancel) {
+  return async (query: string, config: AxiosRequestConfig) => {
+    // Check if we made a request
+    if (token) {
       // Cancel the previous request before making a new request
-      cancel.cancel();
+      token.cancel();
     }
     // Create a new CancelToken
-    cancel = axios.CancelToken.source();
+    token = axios.CancelToken.source();
     try {
-      if (resources[query]) {
-        // Return result if it exists
-        return resources[query];
-      }
-      const res = await axios(query, { ...options, cancelToken: cancel.token });
-
-      const result = res.data.results;
-      // Store response
-      resources[query] = result;
-
+      const res = await axios(query, { ...config, cancelToken: token.token });
+      const result = res.data;
       return result;
     } catch (error) {
       if (axios.isCancel(error)) {

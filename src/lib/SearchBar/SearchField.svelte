@@ -1,16 +1,31 @@
 <script lang="ts">
   import { location } from "$src/stores";
+  import { search } from "$src/utils";
+  import type { City } from "$src/stores/location";
 
   let editing: boolean = false;
   let value: string = "";
+  let cities: City[];
 
   const handleFocus = () => {
     editing = true;
     value = "";
   };
 
-  const handleBlur = () => {
+  const handleBlur = (evt: Event) => {
     editing = false;
+  };
+
+  const handleInput = async (
+    evt: Event & { currentTarget: EventTarget & HTMLInputElement }
+  ) => {
+    cities = await search(`https://api.openweathermap.org/geo/1.0/direct`, {
+      params: {
+        q: evt.currentTarget.value,
+        limit: 5,
+        appid: import.meta.env.VITE_WEATHER_API_KEY,
+      },
+    });
   };
 
   $: {
@@ -22,9 +37,11 @@
 <div class="wrapper">
   <input
     class="field"
+    type="text"
     id="search"
     on:focus={handleFocus}
     on:blur={handleBlur}
+    on:input={handleInput}
     bind:value
   />
 </div>

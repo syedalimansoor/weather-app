@@ -1,7 +1,7 @@
 import { writable } from "svelte/store";
 import axios from "axios";
 
-interface Location {
+export interface City {
   name: string;
   lat: number;
   lon: number;
@@ -11,7 +11,7 @@ interface Location {
 const GEOCODING_API_URL = "https://api.openweathermap.org/geo/1.0/reverse";
 
 export const location = (() => {
-  const { subscribe, set } = writable<Location>({
+  const { subscribe, set } = writable<City>({
     name: "",
     lat: null,
     lon: null,
