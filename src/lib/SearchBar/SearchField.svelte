@@ -12,7 +12,7 @@
     value = "";
   };
 
-  const handleBlur = (evt: Event) => {
+  const handleBlur = () => {
     editing = false;
   };
 
