@@ -8,11 +8,11 @@
 
 <div class="datalist-wrapper">
   {#if cities}
-    <ul class="datalist">
+    <menu class="datalist">
       {#each cities as city}
         <DataListItem {city} />
       {/each}
-    </ul>
+    </menu>
   {:else}
     loading
   {/if}
