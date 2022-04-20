@@ -23,7 +23,7 @@
     display: grid;
     place-items: center;
     color: $black;
-    min-height: 12em;
+    min-height: 12rem;
   }
   .datalist {
     padding: 0;
