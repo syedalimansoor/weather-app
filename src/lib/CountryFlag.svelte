@@ -11,7 +11,6 @@
 
 <style lang="scss">
   .icon {
-    font-size: 2em;
     pointer-events: none;
   }
 </style>
