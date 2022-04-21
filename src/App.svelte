@@ -82,9 +82,9 @@
   <div class="search-bar" role="search">
     <SearchBar />
   </div>
-  <section class="current">
+  <main class="current">
     <CurrentTemp />
-  </section>
+  </main>
   <ForecastTemp />
 </div>
 
