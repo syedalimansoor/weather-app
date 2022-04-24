@@ -3,5 +3,5 @@ export interface CurrentTemp {
   temp: number;
   feels_like: number;
   humidity: number;
-  iconCode: string;
+  iconCode: number;
 }

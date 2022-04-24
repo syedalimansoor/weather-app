@@ -1,3 +1,3 @@
 <script lang="ts">
-  export let iconCode;
+  export let iconCode: number;
 </script>
