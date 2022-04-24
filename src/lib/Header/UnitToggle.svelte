@@ -36,6 +36,8 @@
     background-color: $transparent-gray;
     border-radius: 99em;
     cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
   }
 
   .slider {
