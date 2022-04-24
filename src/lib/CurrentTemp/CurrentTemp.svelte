@@ -2,7 +2,7 @@
   import axios from "axios";
   import { location, unit } from "$src/stores";
   import type { CurrentTemp } from "./curr_temp";
-  import { convertTemp } from "$src/utils/convertTemp";
+  import { convertTemp, toSentenceCase } from "$src/utils";
 
   let currentTemp: CurrentTemp = {
     temp: null,
@@ -37,6 +37,11 @@
 <div class="wrapper">
   <h2 class="current-temp">{temp}&deg;{$unit}</h2>
   <p class="feels-like">Feels like {feels_like}&deg;{$unit}</p>
+
+  <div class="details">
+    {toSentenceCase(currentTemp.description)} <br />
+    Humidity: {currentTemp.humidity}%
+  </div>
 </div>
 
 <style lang="scss">
@@ -52,8 +57,17 @@
 
   .feels-like {
     font-size: $fs-medium;
+    margin-bottom: 1em;
     @media (min-width: $bp-tablet) {
       font-size: $fs-large;
+    }
+  }
+
+  .details {
+    font-size: $fs-small;
+    line-height: 1.2;
+    @media (min-width: $bp-tablet) {
+      font-size: $fs-medium;
     }
   }
 </style>
