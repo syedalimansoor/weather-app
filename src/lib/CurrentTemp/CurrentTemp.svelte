@@ -9,6 +9,7 @@
     feels_like: null,
     humidity: null,
     description: null,
+    icon_code: null,
   };
 
   // Fetch weather data and store in currentTemp
@@ -25,6 +26,7 @@
         currentTemp.feels_like = data.main.feels_like;
         currentTemp.humidity = data.main.humidity;
         currentTemp.description = data.weather[0].description;
+        currentTemp.icon_code = data.weather[0].id;
       });
     }
   }
