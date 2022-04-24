@@ -90,6 +90,7 @@
 
   .datalist-wrapper {
     position: absolute;
+    z-index: 2;
     border-radius: 0.1em;
     top: calc(100% + 1em);
     inset-inline: 0;
