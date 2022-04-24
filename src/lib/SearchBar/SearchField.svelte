@@ -60,6 +60,10 @@
   .wrapper {
     flex-grow: 1;
     position: relative;
+
+    @media (min-width: $bp-tablet) {
+      flex-grow: 0;
+    }
   }
 
   .field-wrapper {
