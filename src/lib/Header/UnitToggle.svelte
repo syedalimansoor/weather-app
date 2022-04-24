@@ -61,7 +61,7 @@
       left: $toggle-width - $inset - $slider-size;
     }
 
-    &:focus-within ~ .slider {
+    &:focus-visible ~ .slider {
       outline: 2px solid $white;
       outline-offset: 2px;
     }
