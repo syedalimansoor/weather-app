@@ -44,9 +44,16 @@
     font-size: $fs-xlarge;
     font-weight: $fw-reg;
     line-height: 1.2;
+
+    @media (min-width: $bp-tablet) {
+      font-size: $fs-xxlarge;
+    }
   }
 
   .feels-like {
     font-size: $fs-medium;
+    @media (min-width: $bp-tablet) {
+      font-size: $fs-large;
+    }
   }
 </style>
