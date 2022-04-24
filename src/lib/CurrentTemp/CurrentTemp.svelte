@@ -38,17 +38,25 @@
 </script>
 
 <div class="wrapper">
-  <h2 class="current-temp">{temp}&deg;{$unit}</h2>
-  <p class="feels-like">Feels like {feels_like}&deg;{$unit}</p>
+  {#if currentTemp.temp}
+    <h2 class="current-temp">{temp}&deg;{$unit}</h2>
+    <p class="feels-like">Feels like {feels_like}&deg;{$unit}</p>
 
-  <div class="details">
-    {toSentenceCase(currentTemp.description)} <br />
-    Humidity: {currentTemp.humidity}%
-  </div>
+    <div class="details">
+      {toSentenceCase(currentTemp.description)} <br />
+      Humidity: {currentTemp.humidity}%
+    </div>
 
-  <div class="weather-icon">
-    <WeatherIcon iconCode={currentTemp.iconCode} />
-  </div>
+    <div class="weather-icon">
+      <WeatherIcon iconCode={currentTemp.iconCode} />
+    </div>
+  {:else}
+    <div class="skeleton" role="presentation">
+      <div class="heading" />
+      <div class="subtitle" />
+      <div class="paragraph" />
+    </div>
+  {/if}
 </div>
 
 <style lang="scss">
@@ -94,6 +102,57 @@
       line-height: 1.7;
       top: 0;
       bottom: unset;
+    }
+  }
+
+  .skeleton {
+    opacity: 0.6;
+
+    * {
+      background: $transparent-gray;
+      background: linear-gradient(
+        110deg,
+        $transparent-gray 8%,
+        $white 18%,
+        $transparent-gray 33%
+      );
+      background-size: 200% 100%;
+      transition: 200ms ease;
+      animation: shine 1.5s infinite linear;
+    }
+
+    .heading {
+      height: $fs-xlarge;
+      width: 15em;
+      margin-bottom: 1em;
+    }
+    .subtitle {
+      height: $fs-medium;
+      width: 12em;
+      margin-bottom: 2em;
+    }
+    .paragraph {
+      height: $fs-large;
+      width: 10em;
+    }
+
+    @media (min-width: $bp-tablet) {
+      .heading {
+        height: $fs-xxlarge;
+        width: 20em;
+        margin-bottom: 2em;
+      }
+      .subtitle {
+        height: $fs-large;
+        width: 18em;
+        margin-bottom: 4em;
+      }
+    }
+  }
+
+  @keyframes shine {
+    to {
+      background-position-x: -200%;
     }
   }
 </style>
