@@ -1,10 +1,10 @@
 <script lang="ts">
   import { location } from "$src/stores";
   import { search } from "$src/utils";
-  import type { City } from "$src/stores/location";
+  import type { City } from "$stores/location";
   import { fly } from "svelte/transition";
 
-  import DataList from "$src/lib/SearchBar/DataList.svelte";
+  import DataList from "./DataList.svelte";
 
   let editing: boolean = false;
   let value: string = "";
@@ -30,7 +30,6 @@
       },
     });
   };
-
   // Display the current chosen city if the user is not editing the search box
   $: {
     if (!editing && $location.name)
