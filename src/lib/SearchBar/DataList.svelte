@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { City } from "$src/stores/location";
-
   import DataListItem from "./DataListItem.svelte";
 
   export let cities: City[];
