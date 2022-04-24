@@ -53,13 +53,17 @@
   }
 
   .checkbox {
-    display: none;
     opacity: 0;
     width: 0;
     height: 0;
 
     &:checked ~ .slider {
       left: $toggle-width - $inset - $slider-size;
+    }
+
+    &:focus-within ~ .slider {
+      outline: 2px solid $white;
+      outline-offset: 2px;
     }
   }
 </style>
