@@ -46,10 +46,16 @@
     Humidity: {currentTemp.humidity}%
   </div>
 
-  <WeatherIcon iconCode={currentTemp.iconCode} />
+  <div class="weather-icon">
+    <WeatherIcon iconCode={currentTemp.iconCode} />
+  </div>
 </div>
 
 <style lang="scss">
+  .wrapper {
+    position: relative;
+  }
+
   .current-temp {
     font-size: $fs-xlarge;
     font-weight: $fw-reg;
@@ -73,6 +79,21 @@
     line-height: 1.2;
     @media (min-width: $bp-tablet) {
       font-size: $fs-medium;
+    }
+  }
+
+  .weather-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 3rem;
+    line-height: 1.2;
+
+    @media (min-width: $bp-tablet) {
+      font-size: 6rem;
+      line-height: 1.7;
+      top: 0;
+      bottom: unset;
     }
   }
 </style>
