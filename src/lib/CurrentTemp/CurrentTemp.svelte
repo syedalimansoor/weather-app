@@ -3,6 +3,7 @@
   import { location, unit } from "$src/stores";
   import type { CurrentTemp } from "./curr_temp";
   import { convertTemp, toSentenceCase } from "$src/utils";
+  import WeatherIcon from "../WeatherIcon.svelte";
 
   let currentTemp: CurrentTemp = {
     temp: null,
@@ -44,6 +45,8 @@
     {toSentenceCase(currentTemp.description)} <br />
     Humidity: {currentTemp.humidity}%
   </div>
+
+  <WeatherIcon iconCode={currentTemp.iconCode} />
 </div>
 
 <style lang="scss">
