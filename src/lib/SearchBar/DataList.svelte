@@ -4,13 +4,14 @@
 
   export let cities: City[];
   export let value: string;
+  export let closeDataList: () => void;
 </script>
 
 <div class="datalist-wrapper">
   {#if cities}
     <menu class="datalist">
       {#each cities as city}
-        <DataListItem {city} />
+        <DataListItem {city} on:close={closeDataList}/>
       {/each}
     </menu>
   {:else if value}

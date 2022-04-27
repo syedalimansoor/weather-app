@@ -15,7 +15,7 @@
     value = "";
   };
 
-  const handleBlur = () => {
+  const closeDataList = () => {
     editing = false;
   };
 
@@ -46,14 +46,13 @@
       type="text"
       id="search"
       on:focus={handleFocus}
-      on:blur={handleBlur}
       on:input={handleInput}
       bind:value
     />
   </div>
   {#if editing}
     <div class="datalist-wrapper" transition:fly={{ y: -10, duration: 500 }}>
-      <DataList {cities} {value} />
+      <DataList {cities} {value} {closeDataList} />
     </div>
   {/if}
 </div>

@@ -1,13 +1,20 @@
 <script lang="ts">
+  import {createEventDispatcher} from "svelte"
+
   import { location } from "$src/stores";
   import type { City } from "$src/stores/location";
   import CountryFlag from "$lib/CountryFlag.svelte";
 
   export let city: City;
+
+  const dispatch = createEventDispatcher();
 </script>
 
 <li class="item">
-  <button class="item-btn" on:click={() => location.set(city)}>
+  <button class="item-btn" on:click={() => {
+    location.set(city);
+    dispatch("close")
+    }}>
     <span class="flag">
       <CountryFlag code={city.country} />
     </span>
