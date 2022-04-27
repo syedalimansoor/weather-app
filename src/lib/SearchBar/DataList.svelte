@@ -3,6 +3,7 @@
   import DataListItem from "./DataListItem.svelte";
 
   export let cities: City[];
+  export let value: string;
 </script>
 
 <div class="datalist-wrapper">
@@ -12,8 +13,10 @@
         <DataListItem {city} />
       {/each}
     </menu>
+  {:else if value}
+    Loading...
   {:else}
-    loading
+    Nothing to show.
   {/if}
 </div>
 
