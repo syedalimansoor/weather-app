@@ -91,6 +91,7 @@
   }
 
   .weather-icon {
+    display: flex;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -100,7 +101,10 @@
     @media (min-width: $bp-tablet) {
       font-size: 6rem;
       line-height: 1.7;
-      top: 0;
+    }
+
+    @media (min-width: $bp-desktop) {
+      top: 2rem;
       bottom: unset;
     }
   }
