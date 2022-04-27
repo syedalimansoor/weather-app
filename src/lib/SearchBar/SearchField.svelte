@@ -22,13 +22,15 @@
   const handleInput = async (
     evt: Event & { currentTarget: EventTarget & HTMLInputElement }
   ) => {
-    cities = await search(`https://api.openweathermap.org/geo/1.0/direct`, {
-      params: {
-        q: evt.currentTarget.value,
-        limit: 5,
-        appid: import.meta.env.VITE_WEATHER_API_KEY,
-      },
-    });
+    if (evt.currentTarget.value) {
+      cities = await search(`https://api.openweathermap.org/geo/1.0/direct`, {
+        params: {
+          q: evt.currentTarget.value,
+          limit: 5,
+          appid: import.meta.env.VITE_WEATHER_API_KEY,
+        },
+      });
+    }
   };
   // Display the current chosen city if the user is not editing the search box
   $: {
@@ -51,7 +53,7 @@
   </div>
   {#if editing}
     <div class="datalist-wrapper" transition:fly={{ y: -10, duration: 500 }}>
-      <DataList {cities} />
+      <DataList {cities} {value} />
     </div>
   {/if}
 </div>
