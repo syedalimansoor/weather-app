@@ -106,6 +106,10 @@
     > * {
       flex-grow: 0;
     }
+
+    @media (min-width: $bp-tablet) {
+      padding: 2.5rem;
+    }
   }
 
   .header {
