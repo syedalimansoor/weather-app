@@ -3,7 +3,6 @@
   import { search } from "$src/utils";
   import type { City } from "$stores/location";
   import { fly } from "svelte/transition";
-
   import DataList from "./DataList.svelte";
 
   let editing: boolean = false;
