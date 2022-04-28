@@ -31,3 +31,11 @@
     }
   });
 </script>
+
+<div class="wrapper">
+  {#each tempList as temp, index}
+    {#if mode === "hourly" || (mode === "daily" && index % 8 === 0)}
+      <ForecastItem />
+    {/if}
+  {/each}
+</div>
