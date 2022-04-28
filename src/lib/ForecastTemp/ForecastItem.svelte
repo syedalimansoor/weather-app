@@ -18,6 +18,6 @@
 <article class="forecast-item">
   <time datetime={temp.dt_txt}>{temp.dt_txt}</time>
   <WeatherIcon iconCode={temp.weather[0].id} />
-  <h3>{Math.round(convertTemp(temp.main.temp, $unit))}</h3>
+  <h3>{Math.round(convertTemp(temp.main.temp, $unit))}&deg;{$unit}</h3>
   <p>{toSentenceCase(temp.weather[0].description)}</p>
 </article>
