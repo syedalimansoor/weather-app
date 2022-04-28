@@ -2,12 +2,14 @@
   import { location } from "$src/stores";
   import { search } from "$src/utils";
   import type { City } from "$stores/location";
+  import { onMount } from "svelte";
   import { fly } from "svelte/transition";
   import DataList from "./DataList.svelte";
 
   let editing: boolean = false;
   let value: string = "";
   let cities: City[];
+  let wrapper: HTMLDivElement;
 
   const handleFocus = () => {
     editing = true;
@@ -17,6 +19,12 @@
   const closeDataList = () => {
     editing = false;
   };
+
+  onMount(() => {
+    window.addEventListener("click", (evt) => {
+      !wrapper.contains(evt.target as Node) && closeDataList();
+    });
+  });
 
   const handleInput = async (
     evt: Event & { currentTarget: EventTarget & HTMLInputElement }
@@ -38,7 +46,7 @@
   }
 </script>
 
-<div class="wrapper">
+<div class="wrapper" bind:this={wrapper}>
   <div class="field-wrapper">
     <input
       class="field"
