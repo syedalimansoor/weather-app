@@ -32,10 +32,10 @@
   });
 </script>
 
-<div class="wrapper">
+<div class="forecast-list">
   {#each tempList as temp, index}
-    {#if mode === "hourly" || (mode === "daily" && index % 8 === 0)}
-      <ForecastItem {temp} />
+    {#if (mode === "hourly" && index < 10) || (mode === "daily" && index % 8 === 0)}
+      <ForecastItem {temp} {mode} />
     {/if}
   {/each}
 </div>
