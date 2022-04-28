@@ -19,6 +19,7 @@
     justify-content: space-between;
     align-items: end;
     line-height: unset;
+    margin-bottom: 0.4em;
   }
 
   .heading {

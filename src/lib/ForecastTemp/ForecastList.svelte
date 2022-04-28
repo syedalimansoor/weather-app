@@ -39,3 +39,12 @@
     {/if}
   {/each}
 </div>
+
+<style lang="scss">
+  .forecast-list {
+    display: flex;
+    overflow: scroll;
+    padding-block: 1em;
+    border-block: 1px solid $white;
+  }
+</style>
