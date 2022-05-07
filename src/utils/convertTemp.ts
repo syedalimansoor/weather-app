@@ -1,5 +1,3 @@
-import { get } from "svelte/store";
-
 export const convertTemp = (temp: number, toUnit: "C" | "F") => {
   switch (toUnit) {
     case "C":
