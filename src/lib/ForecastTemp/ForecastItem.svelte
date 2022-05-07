@@ -22,7 +22,9 @@
   <time class="time" datetime={temp.dt_txt}>
     {#if mode === "hourly"}
       {date.toLocaleTimeString(undefined, {
-        timeStyle: "short",
+        hour: "2-digit",
+        hour12: true,
+        minute: "2-digit",
       })}
     {:else}
       {date.toLocaleDateString(undefined, {
@@ -49,9 +51,33 @@
     align-items: center;
     text-align: center;
     gap: 1em;
+    min-width: 10em;
+    position: relative;
+    scroll-snap-align: start;
+
+    &:not(:last-child) {
+      border-right: 1px solid transparent;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 100%;
+        inset-block: 1em;
+        width: 1px;
+        background-color: $white;
+      }
+    }
   }
 
   .time {
     font-style: italic;
+  }
+
+  .weather-icon {
+    font-size: 3rem;
+  }
+
+  .temp {
+    font-weight: $fw-reg;
+    font-size: $fs-medium;
   }
 </style>
