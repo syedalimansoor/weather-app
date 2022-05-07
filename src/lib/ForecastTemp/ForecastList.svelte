@@ -46,5 +46,6 @@
     overflow: auto;
     padding-block: 1em;
     border-block: 1px solid $white;
+    scroll-snap-type: x mandatory;
   }
 </style>
