@@ -43,7 +43,7 @@
 <style lang="scss">
   .forecast-list {
     display: flex;
-    overflow: scroll;
+    overflow: auto;
     padding-block: 1em;
     border-block: 1px solid $white;
   }

@@ -22,7 +22,7 @@
   <time class="time" datetime={temp.dt_txt}>
     {#if mode === "hourly"}
       {date.toLocaleTimeString(undefined, {
-        hour: "2-digit",
+        hour: "numeric",
         hour12: true,
         minute: "2-digit",
       })}
