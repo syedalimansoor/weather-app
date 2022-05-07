@@ -1,6 +1,6 @@
 <script lang="ts">
   import axios from "axios";
-  import { location, unit } from "$src/stores";
+  import { backgroundUrl, location, unit } from "$src/stores";
   import type { CurrentTemp } from "./curr_temp";
   import { convertTemp, toSentenceCase } from "$src/utils";
   import WeatherIcon from "../WeatherIcon.svelte";
@@ -28,6 +28,9 @@
         currentTemp.humidity = data.main.humidity;
         currentTemp.description = data.weather[0].description;
         currentTemp.iconCode = data.weather[0].id;
+
+        // Update background image
+        backgroundUrl.setBackground(data.weather[0].description);
       });
     }
   }

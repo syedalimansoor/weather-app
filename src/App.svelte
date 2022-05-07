@@ -9,7 +9,6 @@
 
   onMount(unit.autoset);
   onMount(location.autoset);
-  // onMount(() => backgroundUrl.setBackground("weather"));
 </script>
 
 <!-- Global styles -- skip to end for content-->

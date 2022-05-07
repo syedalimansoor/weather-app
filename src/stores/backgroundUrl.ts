@@ -11,20 +11,23 @@ export const backgroundUrl = (() => {
    * @param query a search query to filter photos
    */
   const setBackground = async (query?: string) => {
-    const res = await axios.get(UNSPLASH_API_URL + "photos/random", {
-      params: {
-        query: query ? query : null,
-      },
-      headers: {
-        "Authorization": `Client-ID ${
-          import.meta.env.VITE_UNSPLASH_ACCESS_KEY
-        }`,
-      },
-    });
+    try {
+      const res = await axios.get(UNSPLASH_API_URL + "photos/random", {
+        params: {
+          query: query ? query : null,
+        },
+        headers: {
+          "Authorization": `Client-ID ${
+            import.meta.env.VITE_UNSPLASH_ACCESS_KEY
+          }`,
+        },
+      });
+      const url: string = res.data.urls.regular;
 
-    const url: string = res.data.urls.regular;
-
-    set(url);
+      set(url);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return { subscribe, setBackground };
