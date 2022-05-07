@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { backgroundUrl, location, unit } from "$src/stores";
+  import { location, unit } from "$src/stores";
   import { onMount } from "svelte";
 
   import Header from "$lib/Header/Header.svelte";
@@ -74,7 +74,7 @@
   </style>
 </svelte:head>
 
-<div class="wrapper" style={`--background-url: url(${$backgroundUrl})`}>
+<div class="wrapper">
   <header class="header">
     <Header />
   </header>
@@ -92,7 +92,6 @@
   .wrapper {
     width: 100%;
     min-height: 100vh;
-    /* background-image: var(--background-url); */
     background-image: url("./assets/default-bg.jpg");
     background-color: $gray;
     background-blend-mode: multiply;
