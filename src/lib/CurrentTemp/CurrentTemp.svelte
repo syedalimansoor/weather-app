@@ -114,15 +114,6 @@
 
     * {
       background: $transparent-gray;
-      background: linear-gradient(
-        110deg,
-        $transparent-gray 8%,
-        $white 18%,
-        $transparent-gray 33%
-      );
-      background-size: 200% 100%;
-      transition: 200ms ease;
-      animation: shine 1.5s infinite linear;
     }
 
     .heading {
@@ -151,12 +142,6 @@
         width: 18em;
         margin-bottom: 4em;
       }
-    }
-  }
-
-  @keyframes shine {
-    to {
-      background-position-x: -200%;
     }
   }
 </style>
