@@ -16,17 +16,17 @@ Go check out the [live demo](https://alimansoor-create.github.io/weather-app/)
 
 ## Screenshots
 
-![the app's desktop layout](screenshots%5Cdesktop-default.jpeg)
+![the app's desktop layout](screenshots/desktop-default.jpeg)
 
-![the app's mobile layout](screenshots%5Cmobile-default.jpeg)
+![the app's mobile layout](screenshots/mobile-default.jpeg)
 
 **Searchbox**
 
-![the app's searchbox](screenshots%5Cdesktop-searchbox.jpeg)
+![the app's searchbox](screenshots/desktop-searchbox.jpeg)
 
 **Loading state**
 
-![the app's loading state](screenshots%5Cdesktop-loading.jpeg)
+![the app's loading state](screenshots/desktop-loading.jpeg)
 
 ## Tech stack
 
