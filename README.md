@@ -2,6 +2,8 @@
 
 Welcome! This web app is designed to display weather data (current and forecast) based on the user's location.
 
+Go check out the [live demo](https://alimansoor-create.github.io/weather-app/)
+
 ## Features
 
 - Display current and forecast weather data for the given location
@@ -26,14 +28,13 @@ Welcome! This web app is designed to display weather data (current and forecast)
 
 ![the app's loading state](screenshots%5Cdesktop-loading.jpeg)
 
-
 ## Tech stack
 
 - Svelte, bundled with Vite
 - Typescript
 - Sass for styling
 - Axios to make requests
-- Notion + Whimsical for planning
+- Notion + [Whimsical](https://whimsical.com/) for planning
 
 ## Acknowledgements
 
